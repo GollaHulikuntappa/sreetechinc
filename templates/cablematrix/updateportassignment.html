@@ -1,0 +1,57 @@
+{% extends 'index.html' %}
+
+{%load static%}
+<!DOCTYPE html>
+<html>
+    <head>
+<link rel="stylesheet" href="{% static 'stylesheet/cablematrix/portform.css'%}"/>
+    </head>
+    <body>
+{% block container-fluid %}
+    {{ block.super }}
+    <div class="container form-container mt-3">
+        <h2 class="form-heading" style='color:black; text-align:center;'>Port Assignment Form</h2>
+        <form method="POST" action="">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+    
+            <table>
+                <tr>
+                    <th><label for="id_existingdevicehostname">Existing Device Host Name:</label></th>
+                    <td>{{ form.existingdevicehostname }}</td>
+                    <th><label for="id_newdevicehostname">New Device Host Name:</label></th>
+                    <td>{{ form.newdevicehostname }}</td>
+                </tr>
+
+                <tr>
+                    <th><label for="id_portassignmentticketrequired">Port Assignment Ticket Required:</label></th>
+                    <td>{{ form.portassignmentticketrequired }}</td>
+                    <th><label for="id_portassignmentticketrequesteddate">Port Assignment Ticket Requested Date:</label></th>
+                    <td>{{ form.portassignmentticketrequesteddate }}</td>
+                </tr>
+
+                <tr>
+                    <th><label for="id_portassignmentticketrequestid">Port Assignment Ticket Request ID:</label></th>
+                    <td>{{ form.portassignmentticketrequestid }}</td>
+                    <th><label for="id_portassignmentticketcloseddate">Port Assignment Ticket Closed Date:</label></th>
+                    <td>{{ form.portassignmentticketcloseddate }}</td>   
+                </tr>
+                <tr>
+                    <th><label for="id_portassignmentstatus">Port Assignment Status:</label></th>
+                    <td>{{ form.portassignmentstatus }}</td>
+                </tr>
+
+    
+                <tr >
+                    <td colspan="2">
+                        <input type="hidden" name="action" value="UPDATE">
+                        <button type="submit" >UPDATE</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+{% endblock %}
+</body>
+</html>
+

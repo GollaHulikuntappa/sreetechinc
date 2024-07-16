@@ -1,0 +1,50 @@
+{% extends 'index.html' %}
+
+{%load static%}
+<!DOCTYPE html>
+<html>
+    <head>
+<link rel="stylesheet" href="{% static 'stylesheet/cablematrix/portform.css'%}"/>
+    </head>
+    <body>
+{% block container-fluid %}
+    {{ block.super }}
+    <div class="container form-container mt-3">
+        <h2 class="form-heading" style='color:black; text-align:center;'>FW Migration Form</h2>
+        <form method="POST" action="">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+    
+            <table>
+                <tr>
+                    <th><label for="id_existingdevicehostname">Existing Device Host Name:</label></th>
+                    <td>{{ form.existingdevicehostname }}</td>
+                    <th><label for="id_newdevicehostname">New Device Host Name:</label></th>
+                    <td>{{ form.newdevicehostname }}</td>
+                </tr>
+
+                <tr>
+                    <th><label for="id_fwmigrationpolicyimportdate">FW Migration Policy Import Date:</label></th>
+                    <td>{{ form.fwmigrationpolicyimportdate }}</td>
+                    <th><label for="id_fwmigrationstatus">FW Migration Status:</label></th>
+                    <td>{{ form.fwmigrationstatus }}</td>
+                </tr>
+
+                <tr>
+                    <th><label for="id_fwmigrationproductiondate">FW Migration Production Date:</label></th>
+                    <td>{{ form.fwmigrationproductiondate}}</td>
+                </tr>
+
+                <tr>
+                    <td colspan="2">
+                        <input type="hidden" name="action" value="UPDATE">
+                        <button type="submit" >UPDATE</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+{% endblock %}
+</body>
+</html>
+

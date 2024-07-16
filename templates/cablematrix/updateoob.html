@@ -1,0 +1,57 @@
+{% extends 'index.html' %}
+
+{%load static%}
+<!DOCTYPE html>
+<html>
+    <head>
+<link rel="stylesheet" href="{% static 'stylesheet/cablematrix/portform.css'%}"/>
+    </head>
+    <body>
+{% block container-fluid %}
+    {{ block.super }}
+    <div class="container form-container mt-3">
+        <h2 class="form-heading" style='color:black; text-align:center;'>OOB-Management Form</h2>
+        <form method="POST" action="">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+    
+            <table>
+                <tr>
+                    <th><label for="id_existingdevicehostname">Existing Device Host Name:</label></th>
+                    <td>{{ form.existingdevicehostname }}</td>
+                    <th><label for="id_newdevicehostname">New Device Host Name:</label></th>
+                    <td>{{ form.newdevicehostname }}</td>
+                </tr>
+
+                <tr>
+                    <th><label for="id_oobamityticket">OOB Amity Ticket Required:</label></th>
+                    <td>{{ form.oobamityticket }}</td>
+                    <th><label for="id_oobamityticketrequesteddate">OOB Amity Ticket Requested Date:</label></th>
+                    <td>{{ form.oobamityticketrequesteddate }}</td>
+                </tr>
+
+                <tr>
+                    <th><label for="id_oobamityticketrequestedid">OOB Amity Ticket Requested ID:</label></th>
+                    <td>{{ form.oobamityticketrequestedid }}</td>
+                    <th><label for="id_oobamityticketstatus">OOB Amity Ticket Status:</label></th>
+                    <td>{{ form.oobamityticketstatus }}</td>
+                </tr>
+
+                <tr>
+                    <th><label for="id_oobamityticketcloseddate">OOB Amity Ticket Closed Date:</label></th>
+                    <td>{{ form.oobamityticketcloseddate }}</td>
+                    
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="hidden" name="action" value="UPDATE">
+                        <button type="submit" >UPDATE</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+{% endblock %}
+</body>
+</html>
+

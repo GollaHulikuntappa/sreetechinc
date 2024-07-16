@@ -1,0 +1,73 @@
+{% extends 'index.html' %}
+
+{%load static%}
+<!DOCTYPE html>
+<html>
+    <head>
+<link rel="stylesheet" href="{% static 'stylesheet/cablematrix/portform.css'%}"/>
+    </head>
+    <body>
+{% block container-fluid %}
+    {{ block.super }}
+    <div class="container form-container mt-3">
+        <h2 class="form-heading" style='color:black; text-align:center;'>Subnet/VLAN Info Form</h2>
+        <form method="POST" action="">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+    
+            <table>
+                <tr>
+                    <th><label for="id_existingdevicehostname">Existing Device Host Name:</label></th>
+                    <td>{{ form.existingdevicehostname }}</td>
+                    <th><label for="id_newdevicehostname">New Device Host Name:</label></th>
+                    <td>{{ form.newdevicehostname }}</td>
+                </tr>
+
+                <tr>
+                    <th><label for="id_subnetvlanticketrequired">Subnet/VLAN Info  Ticket Required:</label></th>
+                    <td>{{ form.subnetvlanticketrequired }}</td>
+                    <th><label for="id_subnetvlanticketrequesteddate">Subnet/VLAN Info Ticket Requested Date:</label></th>
+                    <td>{{ form.subnetvlanticketrequesteddate }}</td>
+                </tr>
+
+                <tr>
+                    <th><label for="id_subnetvlanticketrequestedid">Subnet/VLAN Info Ticket Requested ID:</label></th>
+                    <td>{{ form.subnetvlanticketrequestedid }}</td>
+                    <th><label for="id_subnetvlanticketrequeststatus">Subnet/VLAN Info Ticket Status:</label></th>
+                    <td>{{ form.subnetvlanticketrequeststatus }}</td>
+                </tr>
+
+                <tr>
+                    <th><label for="id_subnetvlanticketcloseddate">Subnet/VLAN Info Ticket Closed Date:</label></th>
+                    <td>{{ form.subnetvlanticketcloseddate }}</td>
+                    <th><label for="id_subnetvlanipsrequesteddate">Subnet/VLAN IPS Requested Date:</label></th>
+                    <td>{{ form.subnetvlanipsrequesteddate }}</td>
+                </tr>
+                
+                <tr>
+                    <th><label for="id_subnetvlanipsrequeststatus">Subnet/VLAN IPS Request Status:</label></th>
+                    <td>{{ form.subnetvlanipsrequeststatus }}</td>
+                    <th><label for="id_subnetvlandnsrequesteddate">Subnet/VLAN DNS Requested Date:</label></th>
+                    <td>{{ form.subnetvlandnsrequesteddate }}</td>
+                </tr>
+                
+
+                <tr>
+                    <th><label for="id_subnetvlandnsrequeststatus">Subnet/VLAN DNS Request Status:</label></th>
+                    <td>{{ form.subnetvlandnsrequeststatus }}</td>
+                </tr>
+                
+                
+                <tr>
+                    <td colspan="2">
+                        <input type="hidden" name="action" value="UPDATE">
+                        <button type="submit" >UPDATE</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+{% endblock %}
+</body>
+</html>
+

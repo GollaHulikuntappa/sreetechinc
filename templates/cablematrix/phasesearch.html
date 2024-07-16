@@ -1,0 +1,135 @@
+{% extends 'index.html' %}
+
+{%load static%}
+{% comment %} {% block title %}Forms{% endblock %} {% endcomment %}
+<!DOCTYPE html>
+<html>
+    <head>
+<link rel="stylesheet" href="{% static 'stylesheet/cablematrix/portform.css'%}"/>
+    </head>
+    <body>
+{% block container-fluid %}
+    {{ block.super }}
+    <!-- Additional sidebar content for child template -->
+    {% comment %} <p class="heading">This is additional sidebar content for the child template.</p> {% endcomment %}
+    
+    
+    <div class="d-flex justify-content-between align-items-center px-3 my-2">
+        <form method="POST" style="margin-left:530px; display:flex; flex-direction:row;" action="">
+        <div class="input-group">
+            <label type="text" class="form-control" placeholder="Search..." >{{form.existingdevicename}}</label></th>
+            <input class="btn btn-primary" type="submit" id="searchButton" value="SEARCH">
+        </div>
+        {% csrf_token %}
+    </form>
+    </div>
+
+    <div class="container form-container mt-3">
+        <h2 class="form-heading" style='color:black; text-align:center;'>Request Details</h2>
+        <p style="color:red;">{{data}}</p>
+        {% comment %} <form class="data-entry-form" method="POST" action=''>
+            
+            <table>
+            {{form.as_table}}
+            </table>
+
+            <div class="form-group full-width" style="width:120px; text-align:center; margin-top:20px; margin-left:400px;"> {% endcomment %}
+                {% comment %} <button type="submit">Submit</button> {% endcomment %}
+                {% comment %} <input type='submit' value='Submit'/>
+            </div>
+
+            {% csrf_token %}
+        </form> {% endcomment %}
+        {% comment %} <form method="POST" action="">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+            <table>
+            {{ form.as_table }}
+            </table>
+            <input type="hidden" name="action" value="UPDATE">
+            <button type="submit">Update</button>
+        </form> {% endcomment %}
+
+
+        <form method="POST" action="">
+            {% csrf_token %}
+            {% comment %} {{ form.non_field_errors }}
+    
+            <table>
+                <tr>
+                    <th><label for="id_existingdevicename">Existing Device Name:</label></th>
+                    <td>{{ form.existingdevicename }}</td>
+                </tr> {% endcomment %}
+                <!-- Remove or comment out error messages for this field -->
+                <!-- <tr>
+                    <td colspan="2" class="error">
+                        {% for error in form.existingdevicename.errors %}
+                            <div>{{ error }}</div>
+                        {% endfor %}
+                    </td>
+                </tr> -->
+    
+                {% comment %} <tr>
+                    <th><label for="id_newdevicename">New Device Name:</label></th>
+                    <td>{{ form.newdevicename }}</td>
+                </tr> {% endcomment %}
+                <!-- Remove or comment out error messages for this field -->
+                <!-- <tr>
+                    <td colspan="2" class="error">
+                        {% for error in form.newdevicename.errors %}
+                            <div>{{ error }}</div>
+                        {% endfor %}
+                    </td>
+                </tr> -->
+    
+                <!-- Remove or comment out error messages for this field -->
+                <!-- <tr>
+                    <td colspan="2" class="error">
+                        {% for error in form.ticketid.errors %}
+                            <div>{{ error }}</div>
+                        {% endfor %}
+                    </td>
+                </tr> -->
+    
+                {% comment %} <tr>
+                    <td colspan="2">
+                        <input type="hidden" name="action" value="UPDATE">
+                        <button type="submit">Update</button>
+                    </td>
+                </tr>
+            </table> {% endcomment %}
+
+            <table border= "1" style="border: 1px solid black;">
+                <tr style="border: 1px solid black;">
+                    <th style="border: 1px solid black;">Existing Device Name</th>
+                    <th style="border: 1px solid black;">New Device Name </th>
+                    <th style="border: 1px solid black;">Location</th>
+                    <th style="border: 1px solid black;">Project Manager</th>
+                    {% comment %} <th>DCs Requested Id</th> {% endcomment %}
+                    {% comment %} <th style="border: 1px solid black;">Project Name</th> {% endcomment %}
+                    <th style="border: 1px solid black;">Planner</th>
+                    <th style="border: 1px solid black;">Update</th>
+                    <th style="border: 1px solid black;">Delete</th>
+                </tr>
+                
+                    {% for i in alldictr %}
+                    <tr style="border: 1px solid black;">
+                    <td style="border: 1px solid black;">{{i.existingdevicehostname}}</td>
+                    <td style="border: 1px solid black;">{{i.newdevicehostname}}</td>
+                    <td style="border: 1px solid black;">{{i.location}}</td>
+                    <td style="border: 1px solid black;">{{i.projectmanager}}</td>
+                    {% comment %} <td style="border: 1px solid black;">{{i.projectname}}</td> {% endcomment %}
+                    <td style="border: 1px solid black;">{{i.planner}}</td>
+                    {% comment %} <td>{{i.dcsrequestid}}</td> {% endcomment %}
+                    <td style="border: 1px solid black;"><a href="/cable/updatephasedetails/{{i.id}}"><img src="{% static 'images/image.png' %}" alt="Update" style="width:20px;height:20px;"></a></td>
+                    <td style="border: 1px solid black;"><a href="/cable/deletedcsrequest/{{i.id}}"><img src="{% static 'images/delete.png' %}" alt="Delete" style="width:20px;height:20px;"></a></td>
+                </tr>
+                    {% endfor %}
+                
+            </table>
+        </form>
+    </div>
+{% endblock %}
+</body>
+</html>
+

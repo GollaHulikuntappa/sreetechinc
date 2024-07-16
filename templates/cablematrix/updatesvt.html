@@ -1,0 +1,50 @@
+{% extends 'index.html' %}
+
+{%load static%}
+<!DOCTYPE html>
+<html>
+    <head>
+<link rel="stylesheet" href="{% static 'stylesheet/cablematrix/portform.css'%}"/>
+    </head>
+    <body>
+{% block container-fluid %}
+    {{ block.super }}
+    <div class="container form-container mt-3">
+        <h2 class="form-heading" style='color:black; text-align:center;'>Port Turn Up Form</h2>
+        <form method="POST" action="">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+    
+            <table>
+                <tr>
+                    <th><label for="id_existingdevicehostname">Existing Device Host Name:</label></th>
+                    <td>{{ form.existingdevicehostname }}</td>
+                    <th><label for="id_newdevicehostname">New Device Host Name:</label></th>
+                    <td>{{ form.newdevicehostname }}</td>
+                </tr>
+
+                <tr>
+                    <th><label for="id_fwsvtstarteddate">FW SVT Started Date:</label></th>
+                    <td>{{ form.fwsvtstarteddate }}</td>
+                    <th><label for="id_fwsvtstatus">FW SVT Status:</label></th>
+                    <td>{{ form.fwsvtstatus }}</td>
+                </tr>
+
+                <tr>
+                    <th><label for="id_fwsvtcompleteddate">FW SVT Completed Date:</label></th>
+                    <td>{{ form.fwsvtcompleteddate}}</td>
+                </tr>
+
+                <tr>
+                    <td colspan="2">
+                        <input type="hidden" name="action" value="UPDATE">
+                        <button type="submit" >UPDATE</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+{% endblock %}
+</body>
+</html>
+

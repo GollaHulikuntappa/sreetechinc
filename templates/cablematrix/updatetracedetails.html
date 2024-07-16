@@ -1,0 +1,66 @@
+{% extends 'index.html' %}
+
+{%load static%}
+<!DOCTYPE html>
+<html>
+    <head>
+<link rel="stylesheet" href="{% static 'stylesheet/cablematrix/portform.css'%}"/>
+    </head>
+    <body>
+{% block container-fluid %}
+    {{ block.super }}
+    <div class="container form-container mt-3">
+        <h2 class="form-heading" style='color:black; text-align:center;'>Cable Trace Form</h2>
+        <form method="POST" action="">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+    
+            <table>
+                <tr>
+                    <th><label for="id_existingdevicehostname">Existing Device Host Name:</label></th>
+                    <td>{{ form.existingdevicehostname }}</td>
+                    <th><label for="id_newdevicehostname">New Device Host Name:</label></th>
+                    <td>{{ form.newdevicehostname }}</td>
+                </tr>
+
+                <tr>
+                    <th><label for="id_cabletracerequesteddate">Cable Trace Requested Date:</label></th>
+                    <td>{{ form.cabletracerequesteddate }}</td>
+                    <th><label for="id_cabletracereceiveddate">Cable Trace Received Date:</label></th>
+                    <td>{{ form.cabletracereceiveddate }}</td>
+                </tr>
+
+                <tr>
+                    <th><label for="id_cabletraceticketsrequired">Cable Trace Tickets Required:</label></th>
+                    <td>{{ form.cabletraceticketsrequired }}</td>
+                    <th><label for="id_cabletraceticketrequesteddate">Cable Trace Ticket Requested Date:</label></th>
+                    <td>{{ form.cabletraceticketrequesteddate }}</td>
+                </tr>
+
+                <tr>
+                    <th><label for="id_cabletraceticketrequestedid">Cable Trace Ticket Requested ID:</label></th>
+                    <td>{{ form.cabletraceticketrequestedid }}</td>
+                    <th><label for="id_cabletraceticketcloseddate">Cable Trace Ticket Requested ID:</label></th>
+                    <td>{{ form.cabletraceticketcloseddate }}</td>
+                    
+                </tr>
+
+                <tr>
+                    <th><label for="id_cabletracestatus">Cable Trace Status:</label></th>
+                    <td>{{ form.cabletracestatus }}</td>
+                </tr>
+                
+    
+                <tr >
+                    <td colspan="2">
+                        <input type="hidden" name="action" value="UPDATE">
+                        <button type="submit" >UPDATE</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+{% endblock %}
+</body>
+</html>
+

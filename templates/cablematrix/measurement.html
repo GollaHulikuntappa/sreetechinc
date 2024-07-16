@@ -1,0 +1,88 @@
+{% extends 'index.html' %}
+
+{%load static%}
+{% comment %} {% block title %}Forms{% endblock %} {% endcomment %}
+<!DOCTYPE html>
+<html>
+    <head>
+<link rel="stylesheet" href="{% static 'stylesheet/cablematrix/portform.css'%}"/>
+    </head>
+    <body>
+{% block container-fluid %}
+    {{ block.super }}
+    <!-- Additional sidebar content for child template -->
+    {% comment %} <p class="heading">This is additional sidebar content for the child template.</p> {% endcomment %}
+    <div class="d-flex justify-content-between align-items-center px-3 my-2">
+        <form method="POST" style="margin-left:530px; display:flex; flex-direction:row;" action="">
+        <div class="input-group">
+            <label type="text" class="form-control" placeholder="Search..." >{{form.existingdevicename}}</label></th>
+            <input class="btn btn-primary" type="submit" id="searchButton" value="SEARCH">
+        </div>
+        {% csrf_token %}
+    </form>
+    </div>
+
+    
+    <div class="container form-container mt-3">
+        <h1 class="form-heading" style='color:black; text-align:center; font-weight:bold;font-style:Arial, sans-serif;'>Cable Measurement Overview</h1>
+        <p style="color:red;"> {{data}} </p>
+        <div style='display:flex; flex-direction:row;'>
+            <a href='/cable/dcsdetails/'><div style="padding:20px; background-color:blue; color: white; margin: 10px ;border-radius:10px; width:160px;text-align:center; height: 60px;"> 
+                Active: {{active}}
+            </div></a>
+            <div style="padding:20px; background-color:green; color: white; margin: 10px ;border-radius:10px; width:160px;text-align:center;height: 60px;"> 
+                Completed : {{complete}}
+            </div>
+            <div style="padding:20px; background-color:yellow; color: white; margin: 10px ;border-radius:10px; width:160px;text-align:center;height: 60px;"> 
+                ON-Hold: {{onhold}}
+            </div>
+
+            <div style="padding:20px; background-color:red; color: white; margin: 10px ;border-radius:10px; width:160px;text-align:center;height: 60px;"> 
+                Cancelled : {{cancel}}
+            </div>
+            
+            <div style="padding:20px; background-color:lightblue; color: white; margin: 10px ;border-radius:10px; width:160px;text-align:center;height: 60px;"> 
+                Yet To Work : {{yettowork}}
+            </div>
+            </div>
+
+            <form method="POST" action="">
+                {% csrf_token %}
+                <table border= "1" style="border: 1px solid black;">
+                    <tr style="border: 1px solid black;">
+                        <th style="border: 1px solid black;">Existing Device Name</th>
+                        <th style="border: 1px solid black;">New Device Name </th>
+                        <th style="border: 1px solid black;">Project Manager</th>
+                        <th style="border: 1px solid black;">Location</th>
+                        <th style="border: 1px solid black;">Ticket Type</th>
+                        <th style="border: 1px solid black;">Ticket ID</th>
+                        <th style="border: 1px solid black;">Status</th>
+                        <th style="border: 1px solid black;">Update</th>
+                    </tr>
+                    
+                        {% for i in alldictr %}
+                        <tr style="border: 1px solid black;">
+                        <td style="border: 1px solid black;">{{i.existingdevicehostname}}</td>
+                        <td style="border: 1px solid black;">{{i.newdevicehostname}}</td>
+                        <td style="border: 1px solid black;">{{i.projectmanager}}</td>
+                        <td style="border: 1px solid black;">{{i.location}}</td>
+                        <td style="border: 1px solid black;">{{i.cablemeasurementticketrequired}}</td>
+                        <td style="border: 1px solid black;">{{i.cablemeasurementticketrequestedid}}</td>
+                        <td style="border: 1px solid black;">{{i.cablemeasurementstatus}}</td>
+                        <td style="border: 1px solid black;"><a href="/cable/updatemeasurement/{{i.id}}"><img src="{% static 'images/image.png' %}" alt="Update" style="width:20px;height:20px;"></a></td>
+                    </tr>
+                        {% endfor %}
+                    
+                </table>
+            </form>
+            
+    
+    
+
+            
+            {% comment %} {% csrf_token %} {% endcomment %}
+        {% comment %} </form> {% endcomment %}
+    </div>
+{% endblock %}
+</body>
+</html>

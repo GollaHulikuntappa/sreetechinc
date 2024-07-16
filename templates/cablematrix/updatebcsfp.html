@@ -1,0 +1,57 @@
+{% extends 'index.html' %}
+
+{%load static%}
+<!DOCTYPE html>
+<html>
+    <head>
+<link rel="stylesheet" href="{% static 'stylesheet/cablematrix/portform.css'%}"/>
+    </head>
+    <body>
+{% block container-fluid %}
+    {{ block.super }}
+    <div class="container form-container mt-3">
+        <h2 class="form-heading" style='color:black; text-align:center;'>Blade/Cable/Fiber/SFP Installed Form</h2>
+        <form method="POST" action="">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+    
+            <table>
+                <tr>
+                    <th><label for="id_existingdevicehostname">Existing Device Host Name:</label></th>
+                    <td>{{ form.existingdevicehostname }}</td>
+                    <th><label for="id_newdevicehostname">New Device Host Name:</label></th>
+                    <td>{{ form.newdevicehostname }}</td>
+                </tr>
+
+                <tr>
+                    <th><label for="id_bladecablefibersfpinstallationticketrequired">Blade/Cable/Fiber/SFP Installation Ticket Required:</label></th>
+                    <td>{{ form.bladecablefibersfpinstallationticketrequired }}</td>
+                    <th><label for="id_bladecablefibersfpinstallationticketrequesteddate">Blade/Cable/Fiber/SFP Installation Ticket Requested Date:</label></th>
+                    <td>{{ form.bladecablefibersfpinstallationticketrequesteddate }}</td>
+                </tr>
+
+                <tr>
+                    <th><label for="id_bladecablefibersfpinstallationticketrequestedid">Blade/Cable/Fiber/SFP Installation Ticket Requested ID:</label></th>
+                    <td>{{ form.bladecablefibersfpinstallationticketrequestedid }}</td>
+                    <th><label for="id_bladecablefibersfpinstallationstatus">Blade/Cable/Fiber/SFP Installation Status:</label></th>
+                    <td>{{ form.bladecablefibersfpinstallationstatus }}</td>
+                </tr>
+
+                <tr>
+                    <th><label for="id_bladecablefibersfpinstallationticketcloseddate">Blade/Cable/Fiber/SFP Installation Ticket Closed Date:</label></th>
+                    <td>{{ form.bladecablefibersfpinstallationticketcloseddate }}</td>
+                    
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="hidden" name="action" value="UPDATE">
+                        <button type="submit" >UPDATE</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+{% endblock %}
+</body>
+</html>
+

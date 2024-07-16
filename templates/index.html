@@ -1,0 +1,442 @@
+{% comment %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/ae360af17e.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'homepage.css' %}">
+    <link rel="stylesheet" href="{% static 'stylesheet/cablematrix/portform.css'%}"/>
+    <title>Home</title> {% endcomment %}
+{% comment %} </head> {% endcomment %}
+{% comment %} C:\Users\RameshKottey\OneDrive - SREETECH INC\Desktop\Personal\CB Project\CABLE_MATRIX\myProject\static\images\ATT_logo.jpeg {% endcomment %}
+{% comment %} <body>
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <aside id="sidebar">
+            <div class="h-100 mt-2">
+                <div class="sidebar-logo">
+                    <div>
+                        <img src="{% static 'images/ATT_log02.png'%}" class="att-logo" />
+                    </div>
+                    <div>
+                        <a href="#">AT&T</a>
+                    </div>
+                </div>
+                <!-- Sidebar Navigation -->
+                <div class="sidebar-nav">
+                    <div class="sidebar-item" id="dropdown1">
+                        <a href="#" class="sidebar-link collapsed" data-bs-toggle="collapse" data-bs-target="#pages"
+                            aria-expanded="false" aria-controls="pages">
+                            <img src="{% static "images/cables.png" %}" width="30px" style="margin-right:10px;"/>
+                            Cable Matrix
+                        </a>
+                        <div id="pages" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                            <div class="sidebar-item">
+                                <a href="/cable/requestinformation/" class="sidebar-link ">Request Information</a>
+                            </div>
+                            <div class="sidebar-item">
+                                <a href="/cable/dcsrequest/" class="sidebar-link ">DCS Request</a>
+                            </div>
+                            <div class="sidebar-item">
+                                <a href="/cable/tracerequest/" class="sidebar-link">Cable Trace</a>
+                            </div>
+                            <div class="sidebar-item">
+                                <a href="/cable/networkdesign/" class="sidebar-link">Network Design</a>
+                            </div>
+                            <div class="sidebar-item">
+                                <a href="/cable/matrix/" class="sidebar-link">Cable Matrix</a>
+                            </div> {% endcomment %}
+                            
+                            {% comment %} <div class="sidebar-item">
+                                <a href="/cable/installation/" class="sidebar-link">Device Installation Status</a>
+                            </div>
+                            <div class="sidebar-item">
+                                <a href="/cable/portassignment/" class="sidebar-link">Port Assignments</a>
+                            </div>
+                            <div class="sidebar-item">
+                                <a href="/cable/measurement/" class="sidebar-link">Cable Measurement</a>
+                            </div>
+                            <div class="sidebar-item">
+                                <a href="/cable/sfporder" class="sidebar-link">Cable/SFP Order</a>
+                            </div>
+                            <div class="sidebar-item">
+                                <a href="/cable/bcsfp/" class="sidebar-link">Blade/Cable/Fiber/SFP installed</a>
+                            </div>
+                            <div class="sidebar-item">
+                                <a href="/cable/oob/" class="sidebar-link">OOB-Management</a>
+                            </div>
+
+                            <div class="sidebar-item">
+                                <a href="/cable/oob/" class="sidebar-link">Subnet/VLAN Info need to request for management IP or datafeeds IP</a>
+                            </div>
+
+                            <div class="sidebar-item">
+                                <a href="/cable/oob/" class="sidebar-link">Port Turn Ups</a>
+                            </div>
+
+                            <div class="sidebar-item">
+                                <a href="/cable/oob/" class="sidebar-link">FW SVT</a>
+                            </div>
+
+                            <div class="sidebar-item">
+                                <a href="/cable/oob/" class="sidebar-link">Turn Over Document</a>
+                            </div>
+
+                            <div class="sidebar-item">
+                                <a href="/cable/oob/" class="sidebar-link">FW Migration</a>
+                            </div>
+
+                            <div class="sidebar-item">
+                                <a href="/cable/oob/" class="sidebar-link">FW Decomm</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sidebar-item" id="dropdown2">
+                        <a href="#" class="sidebar-link collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard"
+                            aria-expanded="false" aria-controls="dashboard"> {% endcomment %}
+                            {% comment %} <i class="fa-solid fa-sliders pe-2"></i> {% endcomment %}
+                            {% comment %} <img src="{% static "images/bill.png" %}" width="30px" style="margin-right:10px;"/>
+                            BOM
+                        </a>
+                        <div id="dashboard" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                            <div class="sidebar-item">
+                                <a href="#" class="sidebar-link">Phase1</a>
+                            </div>
+                            <div class="sidebar-item">
+                                <a href="#" class="sidebar-link">Phase2</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sidebar-item" id="dropdown3">
+                        <a href="#" class="sidebar-link collapsed" data-bs-toggle="collapse" data-bs-target="#auth"
+                            aria-expanded="false" aria-controls="auth"> {% endcomment %}
+                            {% comment %} <i class="fa-regular fa-user pe-2"></i> {% endcomment %}
+                            {% comment %} <img src="{% static "images/dcomm3-removebg-preview.png" %}" width="50px" style="margin-right:10px;margin-left:-15px;"/>
+                            DECOM
+                        </a>
+                        <div id="auth" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                            <div class="sidebar-item">
+                                <a href="#" class="sidebar-link">Phase1</a>
+                            </div>
+                            <div class="sidebar-item">
+                                <a href="#" class="sidebar-link">Phase2</a>
+                            </div>
+                        </div>
+                    </div> {% endcomment %}
+                    {% comment %} <li class="sidebar-header">
+                        Multi Level Nav
+                    </li> {% endcomment %}
+                    {% comment %} <li class="sidebar-item">
+                        <a href="#" class="sidebar-link collapsed" data-bs-toggle="collapse" data-bs-target="#multi"
+                            aria-expanded="false" aria-controls="multi">
+                            Multi Level
+                        </a>
+                        <ul id="multi" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link collapsed" data-bs-toggle="collapse"
+                                    data-bs-target="#multi-two" aria-expanded="false" aria-controls="multi-two">
+                                    Phase1
+                                </a>
+                                <ul id="multi-two" class="sidebar-dropdown list-unstyled collapse">
+                                    <li class="sidebar-item">
+                                        <a href="#" class="sidebar-link">Link 1</a>
+                                    </li>
+                                    <li class="sidebar-item">
+                                        <a href="#" class="sidebar-link">Link 2</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link collapsed" data-bs-toggle="collapse"
+                                    data-bs-target="#multi-two" aria-expanded="false" aria-controls="multi-two">
+                                    Phase2
+                                </a>
+                                <ul id="multi-two" class="sidebar-dropdown list-unstyled collapse">
+                                    <li class="sidebar-item">
+                                        <a href="#" class="sidebar-link">Link 1</a>
+                                    </li>
+                                    <li class="sidebar-item">
+                                        <a href="#" class="sidebar-link">Link 2</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li> {% endcomment %}
+                {% comment %} </div>
+            </div>
+        </aside> {% endcomment %}
+
+        <!-- Main Component -->
+        {% comment %} <div class="main">
+            <nav class="navbar navbar-expand px-3 border-bottom mt-2 d-flex justify-content-between align-items-center px-3 my-2">
+                <div class="">
+                    <!-- Button for sidebar toggle -->
+                    <button class="btn" type="button" data-bs-theme="dark">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                
+                <!-- Search Input and Create Button -->
+                <div class="d-flex justify-content-between align-items-center px-3 my-2">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search..." aria-label="Search" aria-describedby="searchButton">
+                        <button class="btn btn-primary" type="button" id="searchButton">Search</button>
+                    </div> {% endcomment %}
+                    {% comment %} <button class="btn btn-success create-btn-card" >Create Form</button> {% endcomment %}
+                {% comment %} </div>
+            </nav>
+
+            
+
+            <main class="content px-3 py-2">
+                <div class="container-fluid">
+                    {% block container-fluid %}{%  endblock %}
+                    
+                </div>
+            </main>
+        </div>
+
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+    <script src="{% static 'stylesheet/cablematrix/navbar.js' %}"></script>
+</body>
+
+</html> {% endcomment %}
+
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/ae360af17e.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'homepage.css' %}">
+    <link rel="stylesheet" href="{% static 'stylesheet/cablematrix/portform.css'%}"/>
+    <title>Home</title>
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <aside id="sidebar">
+            <div class="h-100 mt-2">
+                <div class="sidebar-logo" style="margin-left:-18px;margin-top:-20px;">
+                    <div>
+                        <img src="{% static 'images/ATT_log02.png' %}" class="att-logo" width="40px" />
+                    </div>
+                    <div>
+                        <a href="#" style='color:lightblue; '>AT&T</a>
+                    </div>
+                </div>
+                <!-- Sidebar Navigation -->
+                <div class="sidebar-nav">
+                    <div class="sidebar-item" id="dropdown1">
+                        <a href="#" class="sidebar-link">
+                            <a href='/cable/details/' style="margin-left:10px"><img src="{% static 'images/green-home.png'%}" width="25px" style="margin-right:10px;"/>
+                            <span style='color:white;'>Home </span></a>
+                        </a>
+                    </div>
+                    {% comment %} <div class="sidebar-item" id="dropdown2"> {% endcomment %}
+                        {% comment %} <a href="#" class="sidebar-link collapsed" data-bs-toggle="collapse" data-bs-target="#pages"
+                            aria-expanded="false" aria-controls="pages"> {% endcomment %}
+                            
+                            <br/>
+                            <a href='/cable/phasedetails/' style="margin-left:10px;"><img src="{% static 'images/cables.png'%}" width="25px" style="margin-right:10px;"/>
+                                <span style='color:white;'>Cable Matrix  </span></a>
+                        {% comment %} </a> {% endcomment %}
+                        {% comment %} <div id="pages" class="sidebar-dropdown list-unstyled collapse dropdownside" data-bs-parent="#sidebar">
+                            <div class="sidebar-item">
+                                <a href="/cable/requestinformation/" class="sidebar-link ">Request Information</a>
+                            </div>
+
+                            <div class="sidebar-item">
+                                <a href="/cable/dcsrequest/" class="sidebar-link ">DCS Request</a>
+                            </div>
+                            <div class="sidebar-item">
+                                <a href="/cable/tracerequest/"  class="sidebar-link">Cable Trace</a>
+                            </div>
+                            <div class="sidebar-item">
+                                <a href="/cable/networkdesign/" class="sidebar-link">Network Design</a>
+                            </div>
+                            <div class="sidebar-item">
+                                <a href="/cable/matrix/" class="sidebar-link">Cable Matrix</a>
+                            </div>
+                            
+                            <div class="sidebar-item">
+                                <a href="/cable/installation/" class="sidebar-link">Device Installation</a>
+                            </div>
+                            <div class="sidebar-item">
+                                <a href="/cable/portassignment/" class="sidebar-link">Port Assignments</a>
+                            </div>
+                            <div class="sidebar-item">
+                                <a href="/cable/measurement/" class="sidebar-link">Cable Measurement</a>
+                            </div>
+                            <div class="sidebar-item">
+                                <a href="/cable/sfporder/" class="sidebar-link">Cable/SFP Order</a>
+                            </div>
+                            <div class="sidebar-item">
+                                <a href="/cable/bcsfp/"  class="sidebar-link">Blade/Cable/Fiber/SFP installed</a>
+                            </div>
+                            <div class="sidebar-item">
+                                <a href="/cable/oob/" class="sidebar-link">OOB-Management</a>
+                            </div>
+                            
+                            <div class="sidebar-item">
+                                <a href="/cable/subnet/" class="sidebar-link">Subnet/VLAN Info need to request for management IP or datafeeds IP</a>
+                            </div>
+
+                            <div class="sidebar-item">
+                                <a href="/cable/pt/" class="sidebar-link">Port Turn Ups</a>
+                            </div>
+
+                            <div class="sidebar-item">
+                                <a href="/cable/svt/" class="sidebar-link">FW SVT</a>
+                            </div>
+
+                            <div class="sidebar-item">
+                                <a href="/cable/turn/" class="sidebar-link">Turn Over Document</a>
+                            </div>
+
+                            <div class="sidebar-item">
+                                <a href="/cable/migration/" class="sidebar-link">FW Migration</a>
+                            </div>
+
+                            <div class="sidebar-item">
+                                <a href="/cable/decomm/" class="sidebar-link">FW Decomm</a>
+                            </div>
+                        </div> {% endcomment %}
+                    {% comment %} </div> {% endcomment %}
+                    {% comment %} <div class="sidebar-item" id="dropdown3"> {% endcomment %}
+                        {% comment %} <a href="#" class="sidebar-link collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard"
+                            aria-expanded="false" aria-controls="dashboard"> {% endcomment %}
+                            <br/>
+                            <br/>
+                            <a href="/bom/details/" style="margin-left:10px"><img src="{% static 'images/bill.png'%}" width="25px" style="margin-right:10px;"/>
+                            <span style='color:white;'>BOM</span></a>
+                        {% comment %} </a> {% endcomment %}
+                        {% comment %} <div id="dashboard" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                            <div class="sidebar-item">
+                                <a href="#" class="sidebar-link">Phase1</a>
+                            </div>
+                            <div class="sidebar-item">
+                                <a href="#" class="sidebar-link">Phase2</a>
+                            </div>
+                        </div> {% endcomment %}
+                    {% comment %} </div> {% endcomment %}
+                    {% comment %} <div class="sidebar-item" id="dropdown4"> {% endcomment %}
+                        {% comment %} <a href="#" class="sidebar-link collapsed" data-bs-toggle="collapse" data-bs-target="#auth"
+                            aria-expanded="false" aria-controls="auth"> {% endcomment %}
+                            <br/>
+                            <br/>
+                        
+                            <a href="/decomm/details/" style="margin-left:10px;"><img src="{% static 'images/dcomm3-removebg-preview.png'%}" width="40px" style="margin-right:10px;margin-left:-10px;"/>
+                            <span style='color:white;'>DECOM</span>
+                            </a>
+                        {% comment %} </a> {% endcomment %}
+                        {% comment %} <div id="auth" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                            <div class="sidebar-item">
+                                <a href="#" class="sidebar-link">Decommission</a>
+                            </div>
+                            <div class="sidebar-item">
+                                <a href="#" class="sidebar-link">Device Identification</a>
+                            </div>
+                            <div class="sidebar-item">
+                                <a href="#" class="sidebar-link">Capacity Study</a>
+                            </div> 
+                            <div class="sidebar-item">
+                                <a href="#" class="sidebar-link">Traffic Analysis</a>
+                            </div>
+                            <div class="sidebar-item">
+                                <a href="#" class="sidebar-link">Physical Status Verification</a>
+                            </div>
+                            <div class="sidebar-item">
+                                <a href="#" class="sidebar-link">Soft Disconnect</a>
+                            </div>
+                            <div class="sidebar-item">
+                                <a href="#" class="sidebar-link">Cable Labelling</a>
+                            </div>
+                            <div class="sidebar-item">
+                                <a href="#" class="sidebar-link">Network MOP Development</a>
+                            </div>
+                            <div class="sidebar-item">
+                                <a href="#" class="sidebar-link">Network MOP Implementation</a>
+                            </div>
+                            <div class="sidebar-item">
+                                <a href="#" class="sidebar-link">ATS Security MOP Development</a>
+                            </div>
+                            <div class="sidebar-item">
+                                <a href="#" class="sidebar-link">ATS Security MOP Implementation</a>
+                            </div>
+                            <div class="sidebar-item">
+                                <a href="#" class="sidebar-link">Device Physical Disconnect</a>
+                            </div>
+                            <div class="sidebar-item">
+                                <a href="#" class="sidebar-link">Device Disposed/Device Shipped/Storage</a>
+                            </div>
+                            <div class="sidebar-item">
+                                <a href="#" class="sidebar-link">Database Update</a>
+                            </div>
+                        </div> {% endcomment %}
+                    {% comment %} </div> {% endcomment %}
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Component -->
+        <div class="main">
+            <div class="navbar navbar-expand px-3 mt-0 d-flex justify-content-between align-items-center px-3 my-2">
+                <div class="">
+                    <!-- Button for sidebar toggle -->
+                    <button class="btn" type="button" data-bs-theme="dark">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                
+                <!-- Search Input and Create Button -->
+                {% comment %} <div class="d-flex justify-content-between align-items-center px-3 my-2">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search..." aria-label="Search" aria-describedby="searchButton">
+                        <button class="btn btn-primary" type="button" id="searchButton">Search</button>
+                    </div> {% endcomment %}
+                    {% comment %} <button class="btn btn-success create-btn-card"><a href="#" style="color:white;">Create Form</a></button> {% endcomment %}
+                {% comment %} </div> {% endcomment %}
+                {% comment %} <div>
+                    <span>
+                        <img src="{% static 'images/question.png' %}" width="30px">
+                    </span>
+                </div> {% endcomment %}
+            </div>
+
+            
+
+            <main class="content px-5 py-2">
+                <div class="container-fluid">
+                    {% block container-fluid %}{%  endblock %}
+                </div>
+            </main>
+        </div>
+
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous">
+    </script>
+    <script src="{% static 'stylesheet/cablematrix/navbar.js' %}"></script>
+    
+    
+</body>
+
+</html>

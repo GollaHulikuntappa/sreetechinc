@@ -1,0 +1,138 @@
+/* .form-heading{
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 21px;
+    font-weight: 500;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+ 
+.container{
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+}
+ 
+ 
+.data-entry-form { */
+    /* display: grid; */
+    /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+    /* overflow-x:auto; */
+    /* gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+} */
+ 
+/* .form-group {
+    display: flex;
+    flex-direction: column;
+}
+ 
+.label-heading{
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+}
+ 
+.input{
+    width: 190px;
+    margin-top: 5px;
+}
+ 
+.domain-option{
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+}
+ 
+.select-option{
+    padding: 4px;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+}
+ 
+.btn{
+    font-family: Arial, sans-serif;
+}
+ 
+.btn:hover{
+    background-color: green;
+}
+  */
+
+body{
+    margin: 0px;
+}
+.form-heading{
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 21px;
+    font-weight: 500;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+ 
+.container{
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+ 
+.data-entry-form {
+    gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+ 
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+ 
+.label-heading{
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+}
+ 
+.input{
+    width: 190px;
+    margin-top: 5px;
+}
+ 
+.domain-option{
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+}
+ 
+.select-option{
+    padding: 4px;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+}
+ 
+.btn{
+    font-family: Arial, sans-serif;
+    align-items: center;
+}
+ 
+.form-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.btn:hover{
+    background-color: green;
+}
+.error {
+    color: red;
+    font-size: 12px; /* Adjust font size as needed */
+    margin-top: 5px; /* Adjust spacing as needed */
+}
+
+
+
